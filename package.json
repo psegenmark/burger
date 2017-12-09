@@ -15,5 +15,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psegenmark/burger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psegenmark/burger/issues"
+  },
+  "homepage": "https://github.com/psegenmark/burger#readme"
 }

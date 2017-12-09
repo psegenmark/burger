@@ -28,7 +28,6 @@ app.put("/api/burgers", function(req, res){
 
 app.put("/api/burgers/:id", function (req, res) {
     var id = req.params.id;
-    console.log(id);
     orm.updateBurger(id, res);
 
 })

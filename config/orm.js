@@ -3,7 +3,7 @@ var connection = require("../config/connection.js");
 var orm = {
 
     selectAll: function(res) {
-        var queryString = "SELECT id, burger_name, devoured FROM burgers";
+        var queryString = "SELECT id, burger_name, devoured FROM burgers2";
         connection.query(queryString, function(err, result) {
             console.log(result);
         return res.render("index", {result: result});
@@ -11,7 +11,7 @@ var orm = {
         },
     addBurger: function(newBurger, res) {
         // INSERT INTO burgers (burger_name, devoured) VALUES ("chickin_burger", false);
-        var query  = "INSERT INTO burgers (burger_name, devoured) VALUES ( ? , false)"
+        var query  = "INSERT INTO burgers2 (burger_name, devoured) VALUES ( ? , false)"
         //var queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (" + newBurger + ", " + 0 + ")"
         connection.query(query, [newBurger], function(err, result){
             if (err) {
@@ -22,7 +22,7 @@ var orm = {
     },
     updateBurger: function (id, res) {
         //UPDATE burgers SET devoured=true WHERE id=1;
-        var query = "UPDATE burgers SET devoured=true WHERE id=?"
+        var query = "UPDATE burgers2 SET devoured=true WHERE id=?"
         connection.query(query, [id], function(err, result){
             if (err) {
                 throw err;

@@ -1,8 +1,17 @@
 var mysql = require("mysql");
 
-var connection = mysql.createConnection(
-  "mysql://b9e28e3df8d24d:f004ae51@us-cdbr-iron-east-05.cleardb.net/heroku_83af1219e198553?reconnect=true"
-);
+if ("mysql://b9e28e3df8d24d:f004ae51@us-cdbr-iron-east-05.cleardb.net/heroku_83af1219e198553?reconnect=true") {
+  var connection = mysql.createConnection("mysql://b9e28e3df8d24d:f004ae51@us-cdbr-iron-east-05.cleardb.net/heroku_83af1219e198553?reconnect=true");
+}
+else
+{
+  var connection = mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'root',
+      database: 'burgers_db'
+  });
+};
 
 connection.connect(function(err) {
   if (err) {
